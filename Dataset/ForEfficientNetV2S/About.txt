@@ -1,0 +1,31 @@
+Entire Dataset containing 800 images is divided into five folds containing 160 images each initially.
+The images in fold0 will be selected for validation dataset and images from rest other folds are selected for training dataset. This will be carried out for all the folds.
+We create new folds as:
+fold0 = imagesInFold0AsValidation + imagesInOtherFoldsAsTraining
+
+The DataAugmentation will be performed only on the training dataset in each fold.
+
+DataAugmentation Techniques:
+	RandomBrightness: [0.25, 0.35, 0.45]
+	Random Contrast and Random Saturation: [0.2, 0.4], [0.3, 0.6], [0.4, 0.8]
+	Random Hue: [0.1, 0.3, 0.5]
+	Salt and pepper noise: amount = [0.04, 0.07, 0.1]
+	gaussian_noise and speckle noise: [mean: variance] = mean=0, var=[ 0.004, 0.008, 0.012]
+	
+References:
+	https://theailearner.com/2019/05/07/add-different-noise-to-an-image/
+	https://scikit-image.org/docs/dev/api/skimage.util.html?highlight=random%20noise#skimage.util.random_noise
+	
+	
+For each fold we have two subfolder training and validation containing training and validation images respectively.
+Training contains 640 images and validation contains 160 images.
+When the model is being trained the augmentation techniques will be applied
+on training images.
+
+
+Number of images with scissors in opened positions in each validation fold:
+	FOLD0:17	
+	FOLD1:17
+	FOLD2:14
+	FOLD3:14
+	FOLD4:21
