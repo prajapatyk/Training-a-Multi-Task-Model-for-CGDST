@@ -13,3 +13,6 @@ By default EfficientNetV2S is set as feature extractor.
 
 ## Results
 The results after training of model with EfficientNetV2S as feature extractor are given in the Results folder.
+
+## Research Article
+The corresponding research article can be found here: https://rdcu.be/didZY
